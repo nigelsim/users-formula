@@ -36,7 +36,7 @@ users_googleauth-pam-{{ svc }}-{{ name }}:
     - name: /etc/pam.d/{{ svc }}
     - pattern: "^@include common-auth"
     - repl: |
-      {{ repl | indent(6) }}
+        {{ repl | indent(8) }}
     - unless: grep pam_google_authenticator.so /etc/pam.d/{{ svc }}
     - backup: .bak
 {%-         endif %}
